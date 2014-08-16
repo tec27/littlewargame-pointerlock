@@ -17,13 +17,13 @@ if (!window.keyManager) {
 function requestPointerLock(elem) {
   (elem.requestPointerLock ||
     elem.mozRequestPointerLock ||
-    elem.webkitRequestPointerLock)()
+    elem.webkitRequestPointerLock).call(elem)
 }
 
 function exitPointerLock() {
   (document.exitPointerLock ||
     document.mozExitPointerLock ||
-    document.webkitExitPointerLock)()
+    document.webkitExitPointerLock).call(document)
 }
 
 function onPointerLockChange() {
